@@ -92,7 +92,7 @@ const Withdrawal = ({
                   router.push(`/dashboard/${user_id}`);
                 }, 3000);
               }}
-              className="text-blue-600 py-1 px-3"
+              className="text-blue-900 py-1 px-3"
             >
               Withdraw
             </button>

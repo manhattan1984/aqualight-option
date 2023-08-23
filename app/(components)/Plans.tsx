@@ -19,7 +19,7 @@ const Plan = ({ name, minimum, maximum, interest, duration }: PlanType) => {
   const maximumType = typeof maximum;
   return (
     <div className="border rounded shadow w-4/5 mx-auto basis-1/4 flex-grow">
-      <p className="rounded font-medium text-center text-2xl capitalize text-blue-600 bg-neutral-200 p-2 mb-3">
+      <p className="rounded font-medium text-center text-2xl capitalize text-blue-900 bg-neutral-200 p-2 mb-3">
         {name}
       </p>
       <div className="flex flex-col gap-1 px-4">

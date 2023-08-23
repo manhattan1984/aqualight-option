@@ -13,7 +13,7 @@
   --plasmic-token-teal: var(--token-aTdt1Z5Z5);
   --token-RTyVvoEmJ: #f4f4f4;
   --plasmic-token-light-gray: var(--token-RTyVvoEmJ);
-  --token-Ch-4wU1xA: #001a4d66;
+  --token-Ch-4wU1xA: #001a4dcc;
   --plasmic-token-dark-navy-blue: var(--token-Ch-4wU1xA);
   --token--B9VXXpFP: 10px;
   --plasmic-token-spacing-sm: var(--token--B9VXXpFP);
@@ -31,6 +31,10 @@
   --plasmic-token-footer-bg: var(--token-vqJqrTcQS);
   --token-IA8HLN4N_: #001a4d;
   --plasmic-token-header-bg: var(--token-IA8HLN4N_);
+  --token-Eb8E6u3qY: 60px;
+  --plasmic-token-spacing-60: var(--token-Eb8E6u3qY);
+  --token-wyueyO8lD: 60px;
+  --plasmic-token-spacing-61: var(--token-wyueyO8lD);
 }
 
 .plasmic_tokens {

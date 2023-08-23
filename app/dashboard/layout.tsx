@@ -25,10 +25,10 @@ export default async function DashboardLayout({
     <section className="bg-gray-100">
       {/* Include shared UI here e.g. a header or sidebar */}
 
-      <SignInNavbar id={id} />
 
+      <SignInNavbar id={id} />
       <div className="pt-14">{children}</div>
-      <p className="text-sm text-blue-700 px-6 py-2">Aqualight Mining</p>
+
     </section>
   );
 }

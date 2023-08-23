@@ -4,13 +4,13 @@ import SupabaseProvider from "./(context)/supabase-provider";
 
 // import Header from "./(components)/Header";
 import Header from "@/components/Header";
-import Menu from "./(components)/Menu";
-import MenuProvider from "./(context)/MenuContext";
+
 import "./globals.css";
 import { createClient } from "@/utils/supabase-server";
-import { BsFillCheckSquareFill } from "react-icons/bs";
-import Link from "next/link";
+
 import Footer from "@/components/Footer";
+import { redirect } from "next/navigation";
+import MainHeader from "./(components)/MainHeader";
 
 export const revalidate = 0;
 
@@ -34,7 +34,10 @@ export default async function RootLayout({
         <SupabaseProvider accessToken={session?.access_token}>
           <SupabaseListener serverAccessToken={session?.access_token} />
 
-          <Header signedIn={session?.access_token ? true : false} />
+          <MainHeader
+            signedIn={session?.access_token ? true : false}
+            userId={userId}
+          />
           {children}
           <Footer />
         </SupabaseProvider>

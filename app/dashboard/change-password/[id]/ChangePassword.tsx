@@ -47,7 +47,7 @@ const ChangePassword = () => {
             />
           </div>
 
-          <button onClick={changePassword} className="text-blue-600 my-2">
+          <button onClick={changePassword} className="text-blue-900 my-2">
             Save
           </button>
         </div>

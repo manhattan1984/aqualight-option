@@ -75,15 +75,24 @@ export const PlasmicHeader__VariantProps = new Array<VariantPropType>(
   "signedIn"
 );
 
-export type PlasmicHeader__ArgsType = {};
+export type PlasmicHeader__ArgsType = {
+  dashboardUrl?: string;
+  signOut?: (event: any) => void;
+};
 type ArgPropType = keyof PlasmicHeader__ArgsType;
-export const PlasmicHeader__ArgProps = new Array<ArgPropType>();
+export const PlasmicHeader__ArgProps = new Array<ArgPropType>(
+  "dashboardUrl",
+  "signOut"
+);
 
 export type PlasmicHeader__OverridesType = {
   root?: p.Flex<"div">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultHeaderProps {
+  dashboardUrl?: string;
+  signOut?: (event: any) => void;
   menuOpen?: SingleBooleanChoiceArg<"menuOpen">;
   signedIn?: SingleBooleanChoiceArg<"signedIn">;
   className?: string;
@@ -114,7 +123,16 @@ function PlasmicHeader__RenderFunc(props: {
   const __nextRouter = useNextRouter();
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          dashboardUrl: "/signin" as const
+        },
+        props.args
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -205,15 +223,21 @@ function PlasmicHeader__RenderFunc(props: {
               )
             })}
           >
-            <div
+            <p.PlasmicLink
+              data-plasmic-name={"link"}
+              data-plasmic-override={overrides.link}
               className={classNames(
                 projectcss.all,
+                projectcss.a,
                 projectcss.__wab_text,
-                sty.text__aeZrc
+                sty.link
               )}
+              component={Link}
+              href={`/`}
+              platform={"nextjs"}
             >
               {"AquaLight Option"}
-            </div>
+            </p.PlasmicLink>
             {(
               hasVariant(globalVariants, "mobile", "mobileOnly") ? true : true
             ) ? (
@@ -468,6 +492,7 @@ function PlasmicHeader__RenderFunc(props: {
                 <Button
                   className={classNames("__wab_instance", sty.button___3QiNj)}
                   color={"clear" as const}
+                  link={`/`}
                 >
                   <div
                     className={classNames(
@@ -480,22 +505,15 @@ function PlasmicHeader__RenderFunc(props: {
                   </div>
                 </Button>
                 <Button
-                  className={classNames("__wab_instance", sty.button__bhGl)}
+                  className={classNames("__wab_instance", sty.button__iKdWr, {
+                    [sty.buttonmenuOpen__iKdWrQlpT]: hasVariant(
+                      $state,
+                      "menuOpen",
+                      "menuOpen"
+                    )
+                  })}
                   color={"clear" as const}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___8Hpg
-                    )}
-                  >
-                    {"About"}
-                  </div>
-                </Button>
-                <Button
-                  className={classNames("__wab_instance", sty.button__iKdWr)}
-                  color={"clear" as const}
+                  link={`/plans`}
                 >
                   <div
                     className={classNames(
@@ -504,7 +522,7 @@ function PlasmicHeader__RenderFunc(props: {
                       sty.text__af036
                     )}
                   >
-                    {"Services"}
+                    {"Plans"}
                   </div>
                 </Button>
                 <Button
@@ -521,6 +539,7 @@ function PlasmicHeader__RenderFunc(props: {
                     )
                   })}
                   color={"clear" as const}
+                  link={`/contact`}
                 >
                   <div
                     className={classNames(
@@ -532,43 +551,71 @@ function PlasmicHeader__RenderFunc(props: {
                     {"Contact"}
                   </div>
                 </Button>
-              </p.Stack>
-            ) : null}
-            {true ? (
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__oiL5F)}
-              >
                 <Button
-                  className={classNames("__wab_instance", sty.button___5Os7K, {
-                    [sty.buttonsignedIn___5Os7KG6R3N]: hasVariant(
-                      $state,
-                      "signedIn",
-                      "signedIn"
-                    )
-                  })}
+                  className={classNames("__wab_instance", sty.button__bhGl)}
                   color={"clear" as const}
+                  link={`/about`}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__h54Ho,
+                      sty.text___8Hpg
+                    )}
+                  >
+                    {"About"}
+                  </div>
+                </Button>
+              </p.Stack>
+            ) : null}
+            {(hasVariant($state, "signedIn", "signedIn") ? true : true) ? (
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__oiL5F, {
+                  [sty.freeBoxsignedIn__oiL5FG6R3N]: hasVariant(
+                    $state,
+                    "signedIn",
+                    "signedIn"
+                  )
+                })}
+              >
+                {true ? (
+                  <Button
+                    className={classNames(
+                      "__wab_instance",
+                      sty.button___5Os7K,
                       {
-                        [sty.textsignedIn__h54HoG6R3N]: hasVariant(
+                        [sty.buttonsignedIn___5Os7KG6R3N]: hasVariant(
                           $state,
                           "signedIn",
                           "signedIn"
                         )
                       }
                     )}
+                    color={"clear" as const}
+                    link={"/signin" as const}
                   >
-                    {hasVariant($state, "signedIn", "signedIn")
-                      ? "Dashboard"
-                      : "Sign In"}
-                  </div>
-                </Button>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__h54Ho,
+                        {
+                          [sty.textsignedIn__h54HoG6R3N]: hasVariant(
+                            $state,
+                            "signedIn",
+                            "signedIn"
+                          )
+                        }
+                      )}
+                    >
+                      {hasVariant($state, "signedIn", "signedIn")
+                        ? "Dashboard"
+                        : "Sign In"}
+                    </div>
+                  </Button>
+                ) : null}
                 <Button
                   className={classNames("__wab_instance", sty.button___7WXke, {
                     [sty.buttonsignedIn___7WXkeG6R3N]: hasVariant(
@@ -579,6 +626,14 @@ function PlasmicHeader__RenderFunc(props: {
                   })}
                   color={"white" as const}
                   ghost={true}
+                  link={
+                    hasVariant($state, "signedIn", "signedIn")
+                      ? ("" as const)
+                      : ("/signup" as const)
+                  }
+                  onClick={async event => {
+                    const $steps = {};
+                  }}
                 >
                   <div
                     className={classNames(
@@ -601,6 +656,88 @@ function PlasmicHeader__RenderFunc(props: {
                 </Button>
               </p.Stack>
             ) : null}
+            {(hasVariant($state, "signedIn", "signedIn") ? true : true) ? (
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__t6FEm, {
+                  [sty.freeBoxsignedIn__t6FEmg6R3N]: hasVariant(
+                    $state,
+                    "signedIn",
+                    "signedIn"
+                  )
+                })}
+              >
+                {true ? (
+                  <Button
+                    className={classNames("__wab_instance", sty.button__s5LTq, {
+                      [sty.buttonsignedIn__s5LTqG6R3N]: hasVariant(
+                        $state,
+                        "signedIn",
+                        "signedIn"
+                      )
+                    })}
+                    color={"clear" as const}
+                    link={args.dashboardUrl}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uc097,
+                        {
+                          [sty.textsignedIn__uc097G6R3N]: hasVariant(
+                            $state,
+                            "signedIn",
+                            "signedIn"
+                          )
+                        }
+                      )}
+                    >
+                      {hasVariant($state, "signedIn", "signedIn")
+                        ? "Dashboard"
+                        : "Dashboard"}
+                    </div>
+                  </Button>
+                ) : null}
+                <Button
+                  className={classNames("__wab_instance", sty.button__mbDn9, {
+                    [sty.buttonsignedIn__mbDn9G6R3N]: hasVariant(
+                      $state,
+                      "signedIn",
+                      "signedIn"
+                    )
+                  })}
+                  color={"white" as const}
+                  ghost={true}
+                  link={
+                    hasVariant($state, "signedIn", "signedIn")
+                      ? ("" as const)
+                      : ("/signup" as const)
+                  }
+                  onClick={args.signOut}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vxotm,
+                      {
+                        [sty.textsignedIn__vxotmG6R3N]: hasVariant(
+                          $state,
+                          "signedIn",
+                          "signedIn"
+                        )
+                      }
+                    )}
+                  >
+                    {hasVariant($state, "signedIn", "signedIn")
+                      ? "Sign Out"
+                      : "Sign Out"}
+                  </div>
+                </Button>
+              </p.Stack>
+            ) : null}
           </div>
         ) : null}
       </div>
@@ -609,13 +746,15 @@ function PlasmicHeader__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "link"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -678,6 +817,7 @@ export const PlasmicHeader = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicHeader
     internalVariantProps: PlasmicHeader__VariantProps,

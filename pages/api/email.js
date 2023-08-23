@@ -32,13 +32,13 @@ export default async function handler(req, res) {
     <mj-section background-color="#333333" padding-bottom="20px" padding-top="20px">
       <mj-column vertical-align="middle" width="100%">
         <mj-text align="left" color="#ffffff" font-size="15px" font-family="open Sans Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">${message}</mj-text>
-        <mj-text align="left" color="#ffffff" font-size="15px" font-family="open Sans Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">Thanks, <br /> The Aqualight mining Team</mj-text>
+        <mj-text align="left" color="#ffffff" font-size="15px" font-family="open Sans Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">Thanks, <br /> The Aqualight Option Team</mj-text>
       </mj-column>
     </mj-section>
   </mj-body>
 </mjml>`);
   // let info = await transporter.sendMail({
-  //   from: '"Aqualight mining" <contact@aqualightoption.com>', // sender address
+  //   from: '"Aqualight Option" <contact@aqualightoption.com>', // sender address
   //   to: `${email}`, // list of receivers
   //   subject: `${subject}`, // Subject line
   //   text: `${message}`, // plain text body
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
   // });
 
   let adminInfo = await transporter.sendMail({
-    from: 'Aqualight mining <aqualightoption@gmail.com>', // sender address
+    from: 'Aqualight Option <aqualightoption@gmail.com>', // sender address
     to: `aqualightoption@gmail.com`, // list of receivers
     subject: `Update ${subject}`, // Subject line
     text: `${message}`, // plain text body
@@ -57,7 +57,7 @@ export default async function handler(req, res) {
                     Update from ${email} <br /> ${message}
                     </p>
                     <footer>
-                      <p style="text-align: center;">Aqualight mining</p>
+                      <p style="text-align: center;">Aqualight Option</p>
                       <p style="text-align: center;">All Rights Reserved Ⓒ 2023</p>
                     </footer>
                 </body>

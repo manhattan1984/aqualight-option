@@ -14,7 +14,7 @@ const SignInNavbar = ({ id }: { id: string | undefined }) => {
   const NavLink = ({ href, title }: { href: string; title: string }) => {
     return (
       <Link
-        className={`${pathname === href ? "text-blue-600" : ""}`}
+        className={`${pathname === href ? "text-blue-900" : ""}`}
         href={href}
       >
         {title}
@@ -53,7 +53,7 @@ const SignInNavbar = ({ id }: { id: string | undefined }) => {
   console.log("pathname", pathname?.split("/"));
 
   return (
-    <nav className="mb-4 fixed w-full flex items-start shadow-lg gap-2 p-2 pt-4 overflow-x-auto text-gray-400 text-xs bg-white">
+    <nav className="w-full flex items-start shadow-lg gap-2 p-2 overflow-x-auto text-gray-400 text-xs bg-white">
       {/* @ts-ignore */}
       {links.map(({ href, title }) => (
         // @ts-ignore

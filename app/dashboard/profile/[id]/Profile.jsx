@@ -108,7 +108,7 @@ const Profile = ({
               />
             </div>
           </div>
-          <button onClick={handleUpdateWallets} className="text-blue-600 my-2">
+          <button onClick={handleUpdateWallets} className="text-blue-900 my-2">
             Save Profile
           </button>
         </div>

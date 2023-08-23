@@ -15,7 +15,7 @@ const Payment = ({ amount, setShow, name, address, imageUrl }) => {
     <div className="flex flex-col justify-center items-center p-4">
       <div className="bg-white p-4 max-w-md w-full">
         <div className="flex justify-between items-center">
-          <p className="text-blue-600 text-xl">
+          <p className="text-blue-900 text-xl">
             Transaction is being processed
           </p>
           <AiOutlineClose

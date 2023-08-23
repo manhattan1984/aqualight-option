@@ -72,7 +72,7 @@ const SignUp = ({ referral_id }) => {
     if (user) {
       sendEmailToUser(
         email,
-        "Welcome To Aqualight mining",
+        "Welcome To Aqualight Option",
         `Your Account details: <br /> Email: ${email} <br /> Password: ${password} <br />
         Log Into your account: <a href="https://www.aqualightoption.com/signin">Log In</a>
         `
@@ -94,11 +94,11 @@ const SignUp = ({ referral_id }) => {
       <Toaster />
       <div className="bg-neutral-50 p-2">
         <div className="max-w-lg mx-auto p-4 shadow m-4 rounded bg-white flex flex-col gap-3">
-          <p className="text-center text-md uppercase text-blue-600">
+          <p className="text-center text-md uppercase text-blue-900">
             Sign Up
           </p>
           <div className="text-center my-2">
-            <p className="text-3xl">Aqualight mining</p>
+            <p className="text-3xl">Aqualight Option</p>
           </div>
           <div className="flex gap-2">
             <div className="w-full">
@@ -177,12 +177,12 @@ const SignUp = ({ referral_id }) => {
           </div> */}
           <div className="flex my-4 items-center gap-2">
             <input
-              className="border rounded accent-blue-600"
+              className="border rounded accent-blue-900"
               type="checkbox"
               name=""
               id=""
             />
-            <p className="text-xs">I agree to Aqualight mining terms of use</p>
+            <p className="text-xs">I agree to Aqualight Option terms of use</p>
           </div>
           <div className="">
             <HCaptcha
@@ -196,7 +196,7 @@ const SignUp = ({ referral_id }) => {
             type="submit"
             disabled={loading}
             onClick={handleSignUp}
-            className="bg-blue-600 text-white p-2 uppercase"
+            className="bg-blue-900 text-white p-2 uppercase"
           >
             {loading ? (
               <span className="flex justify-center items-center">

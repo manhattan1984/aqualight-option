@@ -3,7 +3,7 @@
     {
       "name": "Dark Navy Blue",
       "type": "color",
-      "value": "#001A4D66",
+      "value": "#001A4DCC",
       "category": "color",
       "meta": {
         "projectId": "3MD3YMHyr4CCDJ57rgVToC",
@@ -68,6 +68,26 @@
       "meta": {
         "projectId": "3MD3YMHyr4CCDJ57rgVToC",
         "id": "I2Fmwuhwj"
+      }
+    },
+    {
+      "name": "Spacing 60",
+      "type": "spacing",
+      "value": "60px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+        "id": "Eb8E6u3qY"
+      }
+    },
+    {
+      "name": "Spacing 61",
+      "type": "spacing",
+      "value": "60px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+        "id": "wyueyO8lD"
       }
     },
     {

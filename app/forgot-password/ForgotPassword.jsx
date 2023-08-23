@@ -40,7 +40,7 @@ const ForgotPassword = () => {
             </div>
             <button
               onClick={resetPassword}
-              className="bg-blue-600 text-white p-2 uppercase"
+              className="bg-blue-900 text-white p-2 uppercase"
             >
               Reset Password
             </button>

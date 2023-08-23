@@ -7,7 +7,7 @@ const Balance = ({ name, amount }: {name: string, amount: number}) => {
         <p className="uppercase mb-2">{name}</p>
         <p className="text-2xl">${amount}</p>
       </div>
-      <BiMoney className="text-3xl text-blue-600" />
+      <BiMoney className="text-3xl text-blue-900" />
     </div>
   );
 };

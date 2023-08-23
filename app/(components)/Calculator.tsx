@@ -10,7 +10,7 @@ const Profit = ({
   btc: number;
 }) => (
   <div className="bg-white p-2 rounded w-full">
-    <p className="text-xl text-blue-600 mb-2">{term}</p>
+    <p className="text-xl text-blue-900 mb-2">{term}</p>
     <div className="">
       <p className="text-2xl mb-2">${dollars}</p>
       <p className="text-2xl">{btc}BTC</p>

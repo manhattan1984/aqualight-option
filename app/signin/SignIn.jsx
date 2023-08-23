@@ -45,9 +45,9 @@ const SignIn = () => {
       <Toaster />
       <div className="bg-neutral-50 flex items-center h-[90vh]">
         <div className="max-w-md mx-auto p-4 shadow m-4 rounded bg-white flex flex-col gap-3 w-full">
-          <p className="text-center text-md text-blue-600 uppercase">Sign In</p>
+          <p className="text-center text-md text-blue-900 uppercase">Sign In</p>
           <div className="text-center my-2">
-            <p className="text-3xl">Aqualight Mining</p>
+            <p className="text-3xl text-teal-400">Aqualight Option</p>
           </div>
 
           <div className="">
@@ -72,7 +72,7 @@ const SignIn = () => {
 
           <div className="w-full flex">
             <Link
-              className="text-blue-600 text-xs w-full text-right"
+              className="text-blue-900 text-xs w-full text-right"
               href="/forgot-password"
             >
               Forgot Your Password?
@@ -81,7 +81,7 @@ const SignIn = () => {
 
           <button
             onClick={() => signIn()}
-            className="bg-blue-600 text-white p-2"
+            className="bg-blue-900 text-white p-2"
             disabled={loading}
           >
             {loading ? (

@@ -38,11 +38,15 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: ngMo6kfq9Gg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_website_starter.module.css"; // plasmic-import: 3MD3YMHyr4CCDJ57rgVToC/projectcss
 import sty from "./PlasmicPlan.module.css"; // plasmic-import: O7uwZKiaC-/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: CJJCP5BT0l8/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 1KMY4qHZjsV/icon
 
 createPlasmicElementProxy;
 
@@ -56,13 +60,15 @@ export type PlasmicPlan__ArgsType = {
   slot2?: React.ReactNode;
   slot3?: React.ReactNode;
   children?: React.ReactNode;
+  slot4?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicPlan__ArgsType;
 export const PlasmicPlan__ArgProps = new Array<ArgPropType>(
   "slot",
   "slot2",
   "slot3",
-  "children"
+  "children",
+  "slot4"
 );
 
 export type PlasmicPlan__OverridesType = {
@@ -74,6 +80,7 @@ export interface DefaultPlanProps {
   slot2?: React.ReactNode;
   slot3?: React.ReactNode;
   children?: React.ReactNode;
+  slot4?: React.ReactNode;
   className?: string;
 }
 
@@ -203,6 +210,19 @@ function PlasmicPlan__RenderFunc(props: {
           defaultContents:
             "Perfect for newcomers looking to dip their toes into investing.",
           value: args.slot
+        })}
+      </div>
+      <div className={classNames(projectcss.all, sty.freeBox__mosE1)}>
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <Button
+              className={classNames("__wab_instance", sty.button__bSy3A)}
+              color={"teal" as const}
+            >
+              {"Invest Now"}
+            </Button>
+          ),
+          value: args.slot4
         })}
       </div>
     </div>

@@ -132,6 +132,71 @@
           "cssFilePath": "plasmic/website_starter/PlasmicHeader.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "57_tBKHBNh",
+          "name": "ContactPage",
+          "type": "managed",
+          "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicContactPage.tsx",
+          "importSpec": {
+            "modulePath": "../app/contact/page.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicContactPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "4jED4RlCxA",
+          "name": "Contact",
+          "type": "managed",
+          "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicContact.tsx",
+          "importSpec": {
+            "modulePath": "Contact.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicContact.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "YH2nQETug0B",
+          "name": "PlansPage",
+          "type": "managed",
+          "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPlansPage.tsx",
+          "importSpec": {
+            "modulePath": "PlansPage.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPlansPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "0wbuJAhuDk",
+          "name": "About",
+          "type": "managed",
+          "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "../app/about/page.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "ix2oWESV31",
+          "name": "Plans",
+          "type": "managed",
+          "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPlans.tsx",
+          "importSpec": {
+            "modulePath": "../app/plans/page.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPlans.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -194,6 +259,16 @@
           "id": "h6oEZLAkBr",
           "name": "Icon11Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon11.tsx"
+        },
+        {
+          "id": "wRkivNa1q-",
+          "name": "Icon12Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon12.tsx"
+        },
+        {
+          "id": "vpsf4vskOk",
+          "name": "Icon13Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon13.tsx"
         }
       ],
       "images": [

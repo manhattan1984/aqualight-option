@@ -312,8 +312,9 @@
   width: 1em;
   height: 1em;
 }
-.button__fxbtG:global(.__wab_instance) {
+.link {
   position: relative;
+  display: flex;
 }
 .svg__cspQl {
   position: relative;

@@ -157,6 +157,9 @@
 .rootcolor_link:hover {
   background: #ffffff00;
 }
+.rootcolor_teal:hover {
+  background: var(--token-m-kugXEFZ);
+}
 .root:focus-within {
   box-shadow: 0px 0px 0px 3px #96c7f2;
   outline: none;
@@ -206,6 +209,9 @@
 }
 .rootcolor_link:active {
   background: #ffffff00;
+}
+.rootcolor_teal:active {
+  background: #00ffff;
 }
 .startIconContainer {
   display: flex;

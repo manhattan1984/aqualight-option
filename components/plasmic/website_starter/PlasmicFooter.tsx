@@ -64,6 +64,7 @@ export const PlasmicFooter__ArgProps = new Array<ArgPropType>();
 export type PlasmicFooter__OverridesType = {
   root?: p.Flex<"div">;
   columns?: p.Flex<"div">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultFooterProps {
@@ -195,6 +196,7 @@ function PlasmicFooter__RenderFunc(props: {
                     role={"img"}
                   />
                 }
+                link={`/`}
                 size={"minimal" as const}
                 startIcon={
                   <ChecksvgIcon
@@ -214,34 +216,42 @@ function PlasmicFooter__RenderFunc(props: {
                   {"Home"}
                 </div>
               </Button>
-              <Button
-                className={classNames("__wab_instance", sty.button__fxbtG)}
-                color={"clear" as const}
-                endIcon={
-                  <IconIcon
-                    className={classNames(projectcss.all, sty.svg__jiXpS)}
-                    role={"img"}
-                  />
-                }
-                size={"minimal" as const}
-                startIcon={
-                  <ChecksvgIcon
-                    className={classNames(projectcss.all, sty.svg__cspQl)}
-                    role={"img"}
-                  />
-                }
-                submitsForm={true}
+              <p.PlasmicLink
+                data-plasmic-name={"link"}
+                data-plasmic-override={overrides.link}
+                className={classNames(projectcss.all, projectcss.a, sty.link)}
+                component={Link}
+                href={`/about`}
+                platform={"nextjs"}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rs5Sm
-                  )}
+                <Button
+                  color={"clear" as const}
+                  endIcon={
+                    <IconIcon
+                      className={classNames(projectcss.all, sty.svg__jiXpS)}
+                      role={"img"}
+                    />
+                  }
+                  size={"minimal" as const}
+                  startIcon={
+                    <ChecksvgIcon
+                      className={classNames(projectcss.all, sty.svg__cspQl)}
+                      role={"img"}
+                    />
+                  }
+                  submitsForm={true}
                 >
-                  {"About"}
-                </div>
-              </Button>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rs5Sm
+                    )}
+                  >
+                    {"About"}
+                  </div>
+                </Button>
+              </p.PlasmicLink>
             </p.Stack>
           </div>
           <div className={classNames(projectcss.all, sty.column__lZ22J)}>
@@ -268,6 +278,7 @@ function PlasmicFooter__RenderFunc(props: {
                     role={"img"}
                   />
                 }
+                link={`/contact`}
                 size={"minimal" as const}
                 startIcon={
                   <ChecksvgIcon
@@ -296,6 +307,7 @@ function PlasmicFooter__RenderFunc(props: {
                     role={"img"}
                   />
                 }
+                link={`/plans`}
                 size={"minimal" as const}
                 startIcon={
                   <ChecksvgIcon
@@ -312,7 +324,7 @@ function PlasmicFooter__RenderFunc(props: {
                     sty.text__f2AVk
                   )}
                 >
-                  {"Services"}
+                  {"Plans"}
                 </div>
               </Button>
             </p.Stack>
@@ -359,8 +371,9 @@ function PlasmicFooter__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "columns"],
-  columns: ["columns"]
+  root: ["root", "columns", "link"],
+  columns: ["columns", "link"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -368,6 +381,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   columns: "div";
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -431,6 +445,7 @@ export const PlasmicFooter = Object.assign(
   {
     // Helper components rendering sub-elements
     columns: makeNodeComponent("columns"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicFooter
     internalVariantProps: PlasmicFooter__VariantProps,

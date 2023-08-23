@@ -100,7 +100,7 @@ const Dashboard = ({
         ) : (
           <div className="border p-4 flex gap-3 justify-between items-center">
             <div className="bg-blue-100 p-4 rounded-full">
-              <MdOutlineFilterNone className="text-blue-600" />
+              <MdOutlineFilterNone className="text-blue-900" />
             </div>
             <div className="flex-1">
               <p>No Transaction Done</p>

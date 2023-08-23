@@ -41,7 +41,7 @@ import {
 import Button from "../../Button"; // plasmic-import: ngMo6kfq9Gg/component
 import MetricItem from "../../MetricItem"; // plasmic-import: QGkw_mRkJ_/component
 import Feature from "../../Feature"; // plasmic-import: xRqDpvXpSd/component
-import Plan from "../../Plan"; // plasmic-import: O7uwZKiaC-/component
+import PlansPage from "../../PlansPage"; // plasmic-import: YH2nQETug0B/component
 import Testimonial from "../../Testimonial"; // plasmic-import: rmXUMrGgJ9/component
 
 import { useScreenVariants as useScreenVariantslsNz11SgVt9 } from "./PlasmicGlobalVariant__Mobile"; // plasmic-import: lsNZ11SGVt9/globalVariant
@@ -70,6 +70,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
+  plansPage?: p.Flex<typeof PlansPage>;
 };
 
 export interface DefaultHomepageProps {}
@@ -202,16 +203,32 @@ function PlasmicHomepage__RenderFunc(props: {
                   <Button
                     className={classNames("__wab_instance", sty.button__xbRCn)}
                     color={"teal" as const}
+                    link={"/signup" as const}
                   >
-                    {"Get Started Today"}
+                    {"Get Started "}
                   </Button>
-                  <Button
-                    className={classNames("__wab_instance", sty.button__y8Oiv)}
-                    color={"teal" as const}
-                    ghost={true}
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link__ekT3
+                    )}
+                    component={Link}
+                    href={"/#plans" as const}
+                    platform={"nextjs"}
                   >
-                    {"Learn More"}
-                  </Button>
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__y8Oiv
+                      )}
+                      color={"teal" as const}
+                      ghost={true}
+                      link={"" as const}
+                    >
+                      {"Learn More"}
+                    </Button>
+                  </p.PlasmicLink>
                 </p.Stack>
               </p.Stack>
             </div>
@@ -430,42 +447,15 @@ function PlasmicHomepage__RenderFunc(props: {
               </Feature>
             </p.Stack>
           </section>
-          <section className={classNames(projectcss.all, sty.section___6YAtF)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__xS6Zi
-              )}
-            >
-              {"Our Plans"}
-            </div>
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__df8Yi)}
-            >
-              <Plan className={classNames("__wab_instance", sty.plan__qHfY)} />
-
-              <Plan
-                className={classNames("__wab_instance", sty.plan__qN0Z)}
-                slot={
-                  "Ideal for individuals aiming to accelerate their wealth-building journey."
-                }
-                slot2={"15%"}
-                slot3={"$1,000"}
-              >
-                {"Growth Plus"}
-              </Plan>
-              <Plan
-                className={classNames("__wab_instance", sty.plan__wUXf5)}
-                slot={
-                  "Tailored for experienced investors seeking substantial returns."
-                }
-                slot2={"20%"}
-                slot3={"$5,000"}
-              />
-            </p.Stack>
+          <section
+            className={classNames(projectcss.all, sty.section___6YAtF)}
+            id={"#plans" as const}
+          >
+            <PlansPage
+              data-plasmic-name={"plansPage"}
+              data-plasmic-override={overrides.plansPage}
+              className={classNames("__wab_instance", sty.plansPage)}
+            />
           </section>
           <section className={classNames(projectcss.all, sty.section__wpdhT)}>
             <p.Stack
@@ -498,12 +488,23 @@ function PlasmicHomepage__RenderFunc(props: {
                     "Join the ever-growing community of satisfied investors who have chosen AquaLight Option as their investment partner. "
                   }
                 </div>
-                <Button
-                  className={classNames("__wab_instance", sty.button__zGiDi)}
-                  color={"teal" as const}
+                <p.PlasmicLink
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__nGXiD
+                  )}
+                  component={Link}
+                  href={"/#about" as const}
+                  platform={"nextjs"}
                 >
-                  {"Learn More"}
-                </Button>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__zGiDi)}
+                    color={"teal" as const}
+                  >
+                    {"Learn More"}
+                  </Button>
+                </p.PlasmicLink>
               </p.Stack>
               {true ? (
                 <div className={classNames(projectcss.all, sty.freeBox__qlpL)}>
@@ -656,6 +657,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 <Button
                   className={classNames("__wab_instance", sty.button__bLTjo)}
                   color={"teal" as const}
+                  link={"/signup" as const}
                 >
                   {"Get Started Today"}
                 </Button>
@@ -669,13 +671,15 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "plansPage"],
+  plansPage: ["plansPage"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  plansPage: typeof PlansPage;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -738,6 +742,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    plansPage: makeNodeComponent("plansPage"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
