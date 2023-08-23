@@ -61,6 +61,9 @@ export type PlasmicPlan__ArgsType = {
   slot3?: React.ReactNode;
   children?: React.ReactNode;
   slot4?: React.ReactNode;
+  slot5?: React.ReactNode;
+  slot6?: React.ReactNode;
+  slot7?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicPlan__ArgsType;
 export const PlasmicPlan__ArgProps = new Array<ArgPropType>(
@@ -68,7 +71,10 @@ export const PlasmicPlan__ArgProps = new Array<ArgPropType>(
   "slot2",
   "slot3",
   "children",
-  "slot4"
+  "slot4",
+  "slot5",
+  "slot6",
+  "slot7"
 );
 
 export type PlasmicPlan__OverridesType = {
@@ -81,6 +87,9 @@ export interface DefaultPlanProps {
   slot3?: React.ReactNode;
   children?: React.ReactNode;
   slot4?: React.ReactNode;
+  slot5?: React.ReactNode;
+  slot6?: React.ReactNode;
+  slot7?: React.ReactNode;
   className?: string;
 }
 
@@ -158,13 +167,31 @@ function PlasmicPlan__RenderFunc(props: {
                 sty.text__zO8I0
               )}
             >
-              {"Initial Investment:"}
+              {"Minimum"}
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__gUK)}>
               {p.renderPlasmicSlot({
                 defaultContents: "$500",
                 value: args.slot3,
                 className: classNames(sty.slotTargetSlot3)
+              })}
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__xWp80)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___0Mz97
+              )}
+            >
+              {"Maximum"}
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___92EJt)}>
+              {p.renderPlasmicSlot({
+                defaultContents: "$500",
+                value: args.slot6,
+                className: classNames(sty.slotTargetSlot6)
               })}
             </div>
           </div>
@@ -176,20 +203,11 @@ function PlasmicPlan__RenderFunc(props: {
                 sty.text___2GvEr
               )}
             >
-              {"Potential ROI"}
+              {"Daily Income"}
             </div>
             {true ? (
               <div className={classNames(projectcss.all, sty.freeBox__vb3)}>
                 <div className={classNames(projectcss.all, sty.freeBox__jsFJ)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zZnlj
-                    )}
-                  >
-                    {"Up to  "}
-                  </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__b7Oo)}
                   >
@@ -203,13 +221,76 @@ function PlasmicPlan__RenderFunc(props: {
               </div>
             ) : null}
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__do8Dx)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___9KIwa
+              )}
+            >
+              {"Lifespan"}
+            </div>
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__qtDxU)}>
+                <div className={classNames(projectcss.all, sty.freeBox__tQjod)}>
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__lnP55)}
+                  >
+                    {p.renderPlasmicSlot({
+                      defaultContents: "5%",
+                      value: args.slot7,
+                      className: classNames(sty.slotTargetSlot7)
+                    })}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___2Gxcf
+                      )}
+                    >
+                      {"days"}
+                    </div>
+                  </p.Stack>
+                </div>
+              </div>
+            ) : null}
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__gv9SM)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__pQtxi
+              )}
+            >
+              {"Referral Bonus"}
+            </div>
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__elsoK)}>
+                <div className={classNames(projectcss.all, sty.freeBox__sy4Kx)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mdBeS)}
+                  >
+                    {p.renderPlasmicSlot({
+                      defaultContents: "5%",
+                      value: args.slot5,
+                      className: classNames(sty.slotTargetSlot5)
+                    })}
+                  </div>
+                </div>
+              </div>
+            ) : null}
+          </div>
         </p.Stack>
       ) : null}
       <div className={classNames(projectcss.all, sty.freeBox__kQe3M)}>
         {p.renderPlasmicSlot({
-          defaultContents:
-            "Perfect for newcomers looking to dip their toes into investing.",
-          value: args.slot
+          defaultContents: "Daily Withdrawal",
+          value: args.slot,
+          className: classNames(sty.slotTargetSlot)
         })}
       </div>
       <div className={classNames(projectcss.all, sty.freeBox__mosE1)}>

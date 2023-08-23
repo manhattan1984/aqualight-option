@@ -48,8 +48,6 @@ import Plan from "../../Plan"; // plasmic-import: O7uwZKiaC-/component
 import Button from "../../Button"; // plasmic-import: ngMo6kfq9Gg/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: iiA41ZQx55H/codeComponent
 
-import { useScreenVariants as useScreenVariantslsNz11SgVt9 } from "./PlasmicGlobalVariant__Mobile"; // plasmic-import: lsNZ11SGVt9/globalVariant
-
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_website_starter.module.css"; // plasmic-import: 3MD3YMHyr4CCDJ57rgVToC/projectcss
@@ -147,10 +145,6 @@ function PlasmicPlansPage__RenderFunc(props: {
     setDollarQueries(new$Queries);
   }
 
-  const globalVariants = ensureGlobalVariants({
-    mobile: useScreenVariantslsNz11SgVt9()
-  });
-
   return (
     <div
       data-plasmic-name={"root"}
@@ -190,113 +184,145 @@ function PlasmicPlansPage__RenderFunc(props: {
           >
             {"Explore Our Investment Plans"}
           </div>
-          {true ? (
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__hZssq)}
-            >
-              {(
-                (() => {
-                  try {
-                    return $queries.getPlans.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
+          <div className={classNames(projectcss.all, sty.freeBox___51LLs)}>
+            {(
+              (() => {
+                try {
+                  return $queries.getPlans.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return [];
                   }
-                })() ?? []
-              ).map((currentItem, currentIndex) => (
-                <Plan
-                  data-plasmic-name={"plan"}
-                  data-plasmic-override={overrides.plan}
-                  className={classNames("__wab_instance", sty.plan)}
-                  key={currentIndex}
-                  slot2={
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return currentItem.interest + "%";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "10%";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  }
-                  slot3={
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return new Intl.NumberFormat("en-US", {
-                            style: "currency",
-                            currency: "USD",
-                            maximumSignificantDigits: 3
-                          }).format(currentItem.minimum);
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "$500";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  }
-                  slot4={
-                    <Button
-                      data-plasmic-name={"button"}
-                      data-plasmic-override={overrides.button}
-                      className={classNames("__wab_instance", sty.button)}
-                      color={"teal" as const}
-                      link={(() => {
-                        try {
-                          return "/dashboard/plans/" + currentItem.name;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "/signup";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    >
-                      {"Invest Now"}
-                    </Button>
-                  }
-                >
+                  throw e;
+                }
+              })() ?? []
+            ).map((currentItem, currentIndex) => (
+              <Plan
+                data-plasmic-name={"plan"}
+                data-plasmic-override={overrides.plan}
+                className={classNames("__wab_instance", sty.plan)}
+                key={currentIndex}
+                slot2={
                   <React.Fragment>
                     {(() => {
                       try {
-                        return currentItem.name;
+                        return currentItem.interest + "%";
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "Starter Pack";
+                          return "10%";
                         }
                         throw e;
                       }
                     })()}
                   </React.Fragment>
-                </Plan>
-              ))}
-            </p.Stack>
-          ) : null}
+                }
+                slot3={
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return new Intl.NumberFormat("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                          maximumSignificantDigits: 3
+                        }).format(currentItem.minimum);
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "$500";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                }
+                slot4={
+                  <Button
+                    data-plasmic-name={"button"}
+                    data-plasmic-override={overrides.button}
+                    className={classNames("__wab_instance", sty.button)}
+                    color={"teal" as const}
+                    link={(() => {
+                      try {
+                        return "/dashboard/plans/" + currentItem.name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "/signup";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  >
+                    {"Invest Now"}
+                  </Button>
+                }
+                slot6={
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return new Intl.NumberFormat("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                          maximumSignificantDigits: 3
+                        }).format(currentItem.maximum);
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "$500";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                }
+                slot7={
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return currentItem.duration;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "1";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                }
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return currentItem.name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "Starter Pack";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </Plan>
+            ))}
+          </div>
         </div>
       </section>
     </div>

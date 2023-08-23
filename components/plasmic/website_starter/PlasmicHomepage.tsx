@@ -224,7 +224,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       )}
                       color={"teal" as const}
                       ghost={true}
-                      link={"" as const}
+                      link={`/about`}
                     >
                       {"Learn More"}
                     </Button>
@@ -456,6 +456,51 @@ function PlasmicHomepage__RenderFunc(props: {
               data-plasmic-override={overrides.plansPage}
               className={classNames("__wab_instance", sty.plansPage)}
             />
+          </section>
+          <section
+            className={classNames(projectcss.all, sty.section__iBkuN)}
+            id={"about" as const}
+          >
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox___5Plxf)}
+            >
+              {true ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__mt75G)}
+                >
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__daiRj)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__u96X
+                      )}
+                    >
+                      {"Instant Loans For Investor"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cPbG5
+                      )}
+                    >
+                      {
+                        "Get Access To Loan Up To $50,000 For Platinum Plan and premium plan."
+                      }
+                    </div>
+                  </p.Stack>
+                </p.Stack>
+              ) : null}
+            </p.Stack>
           </section>
           <section className={classNames(projectcss.all, sty.section__wpdhT)}>
             <p.Stack
