@@ -22,6 +22,11 @@
 .root > * {
   grid-column: 4;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .root > * {
+    grid-column: 4;
+  }
+}
 .section {
   display: grid;
   position: relative;
@@ -43,10 +48,12 @@
 .section > * {
   grid-column: 4;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .section > * {
+    grid-column: 4;
+  }
+}
 .plansPage:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  width: 100%;
-  grid-column-start: 3 !important;
-  grid-column-end: -3 !important;
 }

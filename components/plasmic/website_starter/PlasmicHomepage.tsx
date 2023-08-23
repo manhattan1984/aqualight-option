@@ -495,7 +495,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.link__nGXiD
                   )}
                   component={Link}
-                  href={"/#about" as const}
+                  href={`/about`}
                   platform={"nextjs"}
                 >
                   <Button

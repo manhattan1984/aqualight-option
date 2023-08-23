@@ -3,7 +3,6 @@
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
 
-import { ScreenVariantProvider } from "../components/plasmic/website_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicHomepage } from "../components/plasmic/website_starter/PlasmicHomepage";
 
 function Homepage({

@@ -9,7 +9,7 @@ const MainHeader = ({
   userId,
 }: {
   signedIn: boolean;
-  userId: string;
+  userId: string | undefined;
 }) => {
   const { supabase } = useSupabase();
   const router = useRouter();
