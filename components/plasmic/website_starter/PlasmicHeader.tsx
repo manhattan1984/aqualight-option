@@ -23,12 +23,6 @@ import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
 
 import {
-  usePlasmicDataConfig,
-  executePlasmicDataOp,
-  usePlasmicDataOp
-} from "@plasmicapp/react-web/lib/data-sources";
-
-import {
   hasVariant,
   classNames,
   wrapWithClassName,
@@ -120,9 +114,7 @@ function PlasmicHeader__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(
     () =>
       Object.assign(
@@ -138,14 +130,15 @@ function PlasmicHeader__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const [$queries, setDollarQueries] = React.useState({});
-
-  const stateSpecs = React.useMemo(
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "showMenu",
@@ -171,7 +164,7 @@ function PlasmicHeader__RenderFunc(props: {
   const $state = p.useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries,
+    $queries: {},
     $refs
   });
 
@@ -709,7 +702,11 @@ function PlasmicHeader__RenderFunc(props: {
                     )
                   })}
                   color={"white" as const}
-                  ghost={true}
+                  ghost={
+                    hasVariant($state, "signedIn", "signedIn")
+                      ? true
+                      : undefined
+                  }
                   link={
                     hasVariant($state, "signedIn", "signedIn")
                       ? ("" as const)

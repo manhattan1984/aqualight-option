@@ -27,7 +27,7 @@ export default async function DashboardLayout({
 
 
       <SignInNavbar id={id} />
-      <div className="pt-14">{children}</div>
+      <div className="">{children}</div>
 
     </section>
   );

@@ -103,10 +103,11 @@
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 7px;
+  font-weight: 300;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .text__zcCVe {
-    font-size: 9px;
+    font-size: 6px;
   }
 }
 .freeBox__oa0Bc {
@@ -209,6 +210,34 @@
   > img {
   margin-left: 30px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__qISv {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__qISv > :global(.__wab_flex-container) {
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - var(--token--B9VXXpFP));
+    height: calc(100% + var(--token--B9VXXpFP));
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__qISv > :global(.__wab_flex-container) > *,
+  .freeBox__qISv > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .freeBox__qISv > :global(.__wab_flex-container) > picture > img,
+  .freeBox__qISv
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: var(--token--B9VXXpFP);
+  }
+}
 .button__xbRCn:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
@@ -225,20 +254,16 @@
   width: 1em;
   height: 1em;
 }
-.link__ekT3 {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-}
 .button__y8Oiv:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: auto;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .button__y8Oiv:global(.__wab_instance) {
+    width: 100%;
+    min-width: 0;
+  }
 }
 .svg__iRXkL {
   position: relative;
@@ -271,7 +296,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .freeBox__oJpbN {
-    top: 480px;
+    top: 532px;
   }
 }
 .img__uyMpo {
@@ -1032,7 +1057,7 @@
   max-width: 100%;
   color: var(--token-NsGwOASzC);
 }
-.link__nGXiD {
+.link {
   display: flex;
   position: relative;
   flex-direction: row;

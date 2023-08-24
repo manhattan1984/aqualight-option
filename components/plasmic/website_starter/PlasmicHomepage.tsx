@@ -71,6 +71,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   plansPage?: p.Flex<typeof PlansPage>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultHomepageProps {}
@@ -97,21 +98,20 @@ function PlasmicHomepage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     mobile: useScreenVariantslsNz11SgVt9()
@@ -207,28 +207,14 @@ function PlasmicHomepage__RenderFunc(props: {
                   >
                     {"Get Started "}
                   </Button>
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__ekT3
-                    )}
-                    component={Link}
-                    href={"/#plans" as const}
-                    platform={"nextjs"}
+                  <Button
+                    className={classNames("__wab_instance", sty.button__y8Oiv)}
+                    color={"teal" as const}
+                    ghost={true}
+                    link={`/about`}
                   >
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__y8Oiv
-                      )}
-                      color={"teal" as const}
-                      ghost={true}
-                      link={`/about`}
-                    >
-                      {"Learn More"}
-                    </Button>
-                  </p.PlasmicLink>
+                    {"Learn More"}
+                  </Button>
                 </p.Stack>
               </p.Stack>
             </div>
@@ -534,11 +520,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   }
                 </div>
                 <p.PlasmicLink
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    sty.link__nGXiD
-                  )}
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  className={classNames(projectcss.all, projectcss.a, sty.link)}
                   component={Link}
                   href={`/about`}
                   platform={"nextjs"}
@@ -716,8 +700,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "plansPage"],
-  plansPage: ["plansPage"]
+  root: ["root", "plansPage", "link"],
+  plansPage: ["plansPage"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -725,6 +710,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   plansPage: typeof PlansPage;
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -788,6 +774,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     plansPage: makeNodeComponent("plansPage"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

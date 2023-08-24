@@ -179,23 +179,22 @@ function PlasmicButton__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const [$queries, setDollarQueries] = React.useState({});
-
-  const stateSpecs = React.useMemo(
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "showStartIcon",
@@ -245,7 +244,7 @@ function PlasmicButton__RenderFunc(props: {
   const $state = p.useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries,
+    $queries: {},
     $refs
   });
 
@@ -294,8 +293,8 @@ function PlasmicButton__RenderFunc(props: {
           [sty.rootcolor_yellow]: hasVariant($state, "color", "yellow"),
           [sty.rootghost]: hasVariant($state, "ghost", "ghost"),
           [sty.rootghost_color_teal]:
-            hasVariant($state, "ghost", "ghost") &&
-            hasVariant($state, "color", "teal"),
+            hasVariant($state, "color", "teal") &&
+            hasVariant($state, "ghost", "ghost"),
           [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
           [sty.rootshape_round]: hasVariant($state, "shape", "round"),
           [sty.rootshape_rounded]: hasVariant($state, "shape", "rounded"),
@@ -436,13 +435,18 @@ function PlasmicButton__RenderFunc(props: {
         className={classNames(projectcss.all, sty.contentContainer, {
           [sty.contentContainer___focusVisibleWithin]:
             triggers.focusVisibleWithin_root,
+          [sty.contentContainercolor_clear]: hasVariant(
+            $state,
+            "color",
+            "clear"
+          ),
           [sty.contentContainercolor_white_ghost]:
             hasVariant($state, "ghost", "ghost") &&
             hasVariant($state, "color", "white"),
           [sty.contentContainerghost]: hasVariant($state, "ghost", "ghost"),
           [sty.contentContainerghost_color_teal]:
-            hasVariant($state, "ghost", "ghost") &&
-            hasVariant($state, "color", "teal"),
+            hasVariant($state, "color", "teal") &&
+            hasVariant($state, "ghost", "ghost"),
           [sty.contentContainerisDisabled]: hasVariant(
             $state,
             "isDisabled",
@@ -541,8 +545,8 @@ function PlasmicButton__RenderFunc(props: {
             ),
             [sty.slotTargetChildrenghost]: hasVariant($state, "ghost", "ghost"),
             [sty.slotTargetChildrenghost_color_teal]:
-              hasVariant($state, "ghost", "ghost") &&
-              hasVariant($state, "color", "teal"),
+              hasVariant($state, "color", "teal") &&
+              hasVariant($state, "ghost", "ghost"),
             [sty.slotTargetChildrenisDisabled]: hasVariant(
               $state,
               "isDisabled",

@@ -65,7 +65,6 @@ export type PlasmicContactPage__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"section">;
   svg?: p.Flex<"svg">;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultContactPageProps {}
@@ -92,21 +91,20 @@ function PlasmicContactPage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     mobile: useScreenVariantslsNz11SgVt9()
@@ -182,6 +180,21 @@ function PlasmicContactPage__RenderFunc(props: {
                 >
                   <Contact
                     className={classNames("__wab_instance", sty.contact__x0UYb)}
+                    slot2={
+                      <p.PlasmicLink
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          sty.link__lyosG
+                        )}
+                        component={Link}
+                        href={"mailto:support@aquamining.com" as const}
+                        platform={"nextjs"}
+                      >
+                        {"support@aqualightoption.com"}
+                      </p.PlasmicLink>
+                    }
                     slot3={"Email Us"}
                   />
 
@@ -207,16 +220,14 @@ function PlasmicContactPage__RenderFunc(props: {
                     slot={"Mon-Fri from 8am to 4pm."}
                     slot2={
                       <p.PlasmicLink
-                        data-plasmic-name={"link"}
-                        data-plasmic-override={overrides.link}
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
                           projectcss.__wab_text,
-                          sty.link
+                          sty.link__lAe7B
                         )}
                         component={Link}
-                        href={"https://www.plasmic.app/" as const}
+                        href={"tel:(123)456-7890" as const}
                         platform={"nextjs"}
                       >
                         {"(123) 456-7890"}
@@ -241,10 +252,9 @@ function PlasmicContactPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "svg", "link"],
-  section: ["section", "svg", "link"],
-  svg: ["svg"],
-  link: ["link"]
+  root: ["root", "section", "svg"],
+  section: ["section", "svg"],
+  svg: ["svg"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -253,7 +263,6 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   svg: "svg";
-  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -318,7 +327,6 @@ export const PlasmicContactPage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     svg: makeNodeComponent("svg"),
-    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicContactPage
     internalVariantProps: PlasmicContactPage__VariantProps,

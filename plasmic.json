@@ -197,6 +197,19 @@
           "cssFilePath": "plasmic/website_starter/PlasmicPlans.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "1lyht3zGxi",
+          "name": "DashboardPlans",
+          "type": "managed",
+          "projectId": "3MD3YMHyr4CCDJ57rgVToC",
+          "renderModuleFilePath": "plasmic/aqualight_option/PlasmicDashboardPlans.tsx",
+          "importSpec": {
+            "modulePath": "../app/dashboard/plans/page.tsx"
+          },
+          "cssFilePath": "plasmic/aqualight_option/PlasmicDashboardPlans.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
